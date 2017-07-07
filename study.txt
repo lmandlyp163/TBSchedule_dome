@@ -1,0 +1,37 @@
+1.TBSchedule控制台搭建
+下载：http://code.taobao.org/p/tbschedule/wiki/index/
+参考: http://blog.csdn.net/paul342/article/details/52191272
+      http://blog.csdn.net/yuchao2015/article/details/53033628
+下载ScheduleConsole.war之后发布到tomcat服务器上
+①Zookeeper连接配置,这个必须与application配置文件的中的内容一致
+Zookeeper地址 : 10.10.28.111:2181
+Zookeeper超时 : 60000
+Zookeeper根目录: /tb-schedule/dev
+Zookeeper用户 : admin
+Zookeeper密码 : admin
+
+注意：Zookeeper根目录(/tb-schedule/dev)是在应用程序启动的时候根据application.yml配置文件来创建的，
+Zookeeper根目录并不是linux目录结构
+
+2.启动Zookeeper之后，可以使用Zookeeper的客户端工具zkCli.sh来查看项目根据application.yml配置文件在
+根目录下面的节点
+ls /tb-schedule/dev
+
+3.SpringBoot 使用 @Value 从 YAML文件读取属性
+在这里有个坑，就是冒号(:)与值之间必须要有空格，否则程序中的占位符无法识别
+
+4.Zookeeper客户端基本操作
+①帮助命令： help 查看Zookeeper客户端可以使用的命令
+②显示根目录下文件： ls / 使用 ls 命令来查看当前 ZooKeeper 中所包含的内容
+③显示根目录下、文件： ls2 / 查看当前节点数据并能看到更新次数等数据
+④创建文件，并设置初始内容： create /zk "test" 创建一个新的 znode节点“ zk ”以及与它关联的字符串
+⑤ 获取文件内容： get /zk 确认 znode 是否包含我们所创建的字符串
+⑥ 修改文件内容： set /zk "zkbak" 对 zk 所关联的字符串进行设置
+⑦删除文件： delete /zk 将刚才创建的 znode 删除
+⑧退出客户端： quit
+
+5.Zookeeper如何删除有权限的节点
+
+6.扩展：
+写一个案列：使用TBSchedule来开发一个数据迁移的案列
+

@@ -1,2 +1,2 @@
-# TBSchedule_dome
-TBSchedule_dome(spring boot)
+# springboot_tbschedule_demo
+这里使用springBoot和TBSchedule的最小整合，希望大家喜欢
