@@ -1,4 +1,4 @@
-package com.zto.demo.config;
+package com.lm.demo.config;
 
 import java.util.HashMap;
 import java.util.Map;

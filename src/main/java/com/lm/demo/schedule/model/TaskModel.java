@@ -1,4 +1,4 @@
-package com.zto.demo.schedule.model;
+package com.lm.demo.schedule.model;
 
 public class TaskModel {
 	
